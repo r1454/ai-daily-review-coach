@@ -197,16 +197,20 @@ def interactive_review(client):
     print("  🤖 AI 每日复盘教练")
     print("=" * 50)
     print("\n今天发生了什么？做了什么？有什么感受？")
-    print("（可以写一段话，输入完成后按 Enter，再按 Ctrl+D / Ctrl+Z 结束）\n")
+    print("（输入完成后，空行按 Enter 即可）\n")
 
-    # Read multi-line input
+    # Read input until empty line
     lines = []
-    try:
-        while True:
+    while True:
+        try:
             line = input()
+        except EOFError:
+            break
+        if line.strip() == "":
+            if lines:
+                break
+        else:
             lines.append(line)
-    except EOFError:
-        pass
     daily_log = "\n".join(lines)
 
     if not daily_log.strip():
@@ -404,7 +408,14 @@ def main():
         elif args.month:
             do_retrospective(client, "month")
         else:
-            interactive_review(client)
+            # Loop mode: keep reviewing until user quits
+            while True:
+                interactive_review(client)
+                print("\n再来一次？(y/n): ", end="")
+                again = input().strip().lower()
+                if again not in ("y", "yes", ""):
+                    print("再见！👋")
+                    break
 
 
 if __name__ == "__main__":

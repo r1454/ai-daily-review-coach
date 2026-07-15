@@ -393,18 +393,18 @@ def main():
     if args.model:
         MODEL = args.model
 
-    client = get_client()
-
     if args.list:
         list_reviews()
     elif args.read:
         read_review(args.read)
-    elif args.week:
-        do_retrospective(client, "week")
-    elif args.month:
-        do_retrospective(client, "month")
     else:
-        interactive_review(client)
+        client = get_client()
+        if args.week:
+            do_retrospective(client, "week")
+        elif args.month:
+            do_retrospective(client, "month")
+        else:
+            interactive_review(client)
 
 
 if __name__ == "__main__":

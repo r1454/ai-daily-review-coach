@@ -15,8 +15,8 @@
 
 | 截图 | 内容 |
 |------|------|
-| screenshot_user_1.png | AI每日复盘教练交互界面 - 输入日记录 |
-| screenshot_user_2.png | AI追问与复盘结果 |
+| screenshot_user_3.png | 输入日记录 + AI 生成 3 个深度追问 |
+| screenshot_user_4.png | 回答追问 + AI 综合复盘结果 |
 
 ## 测试步骤与结果
 

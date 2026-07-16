@@ -19,3 +19,6 @@ Thumbs.db
 # Review data (personal)
 .daily-reviews/
 start.bat
+_start_review.bat
+start.ps1
+start.bat

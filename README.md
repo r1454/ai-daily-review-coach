@@ -80,4 +80,5 @@ ai-daily-review-coach/
 ## 课程信息
 
 - 课程：AI个人系统实践
+- 仓库地址：https://github.com/r1454/ai-daily-review-coach
 - 提交：https://www.kdocs.cn/l/cldE5GnPASi5
